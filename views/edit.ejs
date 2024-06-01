@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind playcdn script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main bg-zinc-900 h-screen w-full text-white p-5">
+        <div class="createtasks">
+            <h1>Create Tasks</h1>
+            <form action="/newName" class="text-zinc-600" method="post">
+                <input class="w-1/4 inline-block outline-none p-2 mb-5" placeholder="Previous Name" type="text"
+                    name="previous" value="<%= filename%>" >
+                <input class="w-1/4 inline-block outline-none p-2 mb-5" placeholder="Enter New File Name " type="text"
+                    name="new">
+                <button class="bg-yellow-600 px-6 py-2 rounded-md mt-0 text-white" type="details">edit now</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>

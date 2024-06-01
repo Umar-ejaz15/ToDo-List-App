@@ -27,7 +27,10 @@
                         <h1>
                             <%= val %>
                         </h1>
-                        <a class=" bg-blue-600 px-5 py-2 rounded-md mt-5 inline-block " href="/files/<%=val%>"> read more </a>
+                        <a class=" bg-blue-600 px-5 py-2 rounded-md mt-5 inline-block " href="/files/<%=val%>"> read
+                            more </a>
+                        <a class=" bg-zinc-200  text-black px-2 py-1 rounded-md mt-5 inline-block "
+                            href="/edit/<%=val%>"> edit file </a>
                     </div>
                     <% })} else { %>
                         <h1 class="text-zinc-600 mt-2">No Task yet</h1>

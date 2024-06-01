@@ -1,3 +1,4 @@
+const { log } = require('console');
 const express = require('express');
 const app = express();
 const fs = require('fs');
@@ -19,11 +20,17 @@ app.get('/files/:Postsdata', (req, res) => {
     res.render('carddets.ejs', { filename: req.params.Postsdata, filesdata: filesdata });
   })
 });
-
+app.get('/edit/:Postsdata', (req, res) => {
+  res.render('edit.ejs', { filename: req.params.Postsdata })
+});
+app.post('/newName', (req, res) => {
+  fs.rename(`./files/${req.body.previous}`, `./files/${req.body.new}`, (err) => {
+    res.redirect('/')
+  })
+});
 
 app.post('/create', (req, res) => {
-  fs.writeFile(`./files/${req.body.title.split(' ').join(' ')}.txt`, req.body.description, (err) => {
-
+  fs.writeFile(`./files/${req.body.title.split(' ').join('-')}.txt`, req.body.description, (err) => {
     res.redirect('/')
   })
   // console.log(req.body);
